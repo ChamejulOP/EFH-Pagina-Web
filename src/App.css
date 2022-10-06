@@ -1,38 +1,559 @@
-.App {
+/*******************Custom font*********************/
+@font-face {
+	font-family: Raleway;
+	src: url('./assets/font/Raleway-Bold.ttf');
+	font-weight: 700;
+}
+@font-face {
+	font-family: Raleway;
+	src: url('./assets/font/Raleway-Medium.ttf');
+	font-weight: 500;
+}
+@font-face {
+	font-family: Raleway;
+	src: url('./assets/font/Raleway-Light.ttf');
+	font-weight: 400;
+}
+
+
+
+/************ Default Css ************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+  overflow-x: hidden;
+  position: relative;
+  font-weight: 400;
+  font-family: 'Raleway', sans-serif !important;
+  color: #09141b;
+}
+/*
+@media (max-width:800px){
+  h1 span{
+    font-size: 20px;
   }
 }
+*/
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+h1 span{
+  font-size: 70px;
+  font-weight: 700;
+}
+h2 span{
+  font-size: 45px;
+  font-weight: 700;
+}
+h3 span{
+  font-size: 30px;
+  font-weight: 400;
+}
+p{
+  font-size: 25px;
+}
+button span{
+  font-size: 20px;
+  font-weight: 400;
+}
+/**/
+p, a, li, button, ul, i {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  text-decoration: none;
+}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+/************ Navbar Css ************/
+
+nav.navbar {
+  padding: 0 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+  background-color: #ebf2f2;
+}
+
+nav.navbar a.navbar-brand {
+  width: 12%;
+}
+nav.navbar .navbar-nav .nav-link.navbar-link {
+  color: #09141b;
+  letter-spacing: 0.8px;
+  padding: 0 25px;
+  opacity: 0.75;
+}
+nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
+nav.navbar .navbar-nav a.nav-link.navbar-link.active {
+    opacity: 1;
+}
+span.navbar-text {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-text button {
+  color: #09141b;
+  border: 1px solid #09141b;
+  padding: 15px 30px; /*arreglar media*/
+  margin-left: 18px;
+	position: relative;
+	background-color: transparent;
+	transition: 0.3s ease-in-out;
+}
+
+.navbar-text button::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background-color: #09141b;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+.navbar-text button:hover {
+  color: #fff;
+}
+.navbar-text button:hover::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+	transform: translateY(8px) rotate(-45deg);
+	background-color: #fff;
+	height: 2px;
+}
+
+/******************* Banner *****************************************/
+.b-container {
+  overflow: hidden;
+  max-height: 700px;
+  }
+.b-content{
+  color: #fff;
+  position: absolute;
+  top: 7%;
+  left: 20%;
+  right: 20%;
+}
+
+.b-button{
+  position: relative;
+  background-color: #081F35;
+  margin-top: 3.5%;
+  padding: 0.8vw 1.8vw; /*arreglar media*/
+  border-radius: 25px;
+}
+.b-button span{
+  color: #ebf2f2;
+}
+/***********************************Qualities*************************************************/
+
+.qualities{
+  margin: 8%;
+}
+
+.qualities-col i{
+  color: #09141b;
+  margin-bottom: 20px;
+  font-size: 600%;
+}
+.qualities-col p{
+  color: #081F35;
+}
+
+/***************************************Section**************************************************/
+/*products*/
+.products-section{
+  background-color: #ff820f;
+  margin: 10% 0 0 0;
+}
+.products-title{
+  padding: 4% 0 2%;
+}
+.products-description{
+  margin: 0 20% 2% 20%;
+  padding: 0 5%;
+  text-align: justify;
+}
+.general-products-img{
+  margin-top: 2%;
+  width: 55%;
+  transition: transform .2s; /* Animation */
+}
+.general-products-img:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.section-button{
+  position: relative;
+  background-color: #081F35;
+  padding: 50px;
+  border-radius: 25px;
+  
+}
+a:-webkit-any-link {
+  text-decoration: none;
+  color: inherit;
+}
+.section-button span{
+  color: #ebf2f2;
+}
+
+/*machine*/
+
+.machine-section{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.machine-title{
+  padding-top: 4%;
+}
+.machine-description{
+  text-align: justify;
+}
+.machine-img{
+  width: 50%;
+}
+
+.section-button{
+  position: relative;
+  background-color: #081F35;
+  padding: 10px;
+  border-radius: 7%;
+}
+.section-button span{
+  color: #ebf2f2;
+}
+.machine-content{
+  margin: 10% 8% 10% 8%;
+  padding: 0 1% 0 1%;
+}
+/*about*/
+.about-section{
+  display: flex;
+
+}
+.about-title{
+  padding-top: 4%;
+}
+.about-description{
+  text-align: justify;
+}
+.about-img{
+  width: 50%;
+}
+
+.section-button{
+  position: relative;
+  background-color: #081F35;
+  padding: 10px;
+  border-radius: 7%;
+}
+.section-button span{
+  color: #ebf2f2;
+}
+.about-content{
+  margin: 10% 8% 10% 8%;
+  padding: 0 1% 0 1%;
+}
+/*certificate*/
+.certificate-section{
+  background-color: #ff820f;
+  display: flex;
+
+}
+.certificate-content{
+  margin: 10% 25% 10% 8%;
+  padding: 0 1% 0 1%;
+  transform: (-50%,-50%);
+}
+.certificate-title{
+  padding-top: 4%;
+}
+.certificate-description{
+  text-align: justify;
+}
+.certificate-img{
+  margin-top: 8%;
+  right: 0%;
+  width: 30%;
+  height: 30%;
+}
+
+/*****************************************Footer***************************************************/
+.footer-efh{
+  padding-top: 20px;
+}
+.footer-img{
+  background-color: #ebf2f2;
+  border-radius: 15px;
+  width: 50%;
+}
+.footer-content{
+  margin: 0% !important;
+  padding: 0% !important;
+}
+.f-tel, .f-correo{
+  display: flex;
+}
+.f-tel p, .f-correo p{
+  padding-left: 8px;
+} 
+.copyright-efh{
+  color: #fff;
+}
+
+/**************************************************************************************************/
+
+
+/********************************************************************/
+/********************************PRODUCTS****************************/
+/********************************************************************/
+
+/******************************BANNER******************************/
+.p-banner{
+  background-image: linear-gradient(rgba(255, 130, 15,0.8),rgba(255, 130, 15,0.5)), url(./assets/img/banner.jpg);
+  background-size: cover;
+  margin: 70px 0;
+  padding: 50px 0px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/****************************PRODUCTOS*********************************/
+
+.p-img{
+  transition: transform .2s;
+}
+.p-img:hover{
+  transform: scale(1.1);
+}
+.p-section,.p-products{
+  margin: 0 5%
+}
+.p-section img{
+  width: 60%;
+}
+.p-section h1{
+  margin: 2%;
+}
+.p-section span{
+  border-width: 5px;
+  border-bottom: #ff820f;
+  border-bottom-style: solid;
+  padding: 1%;
+}
+.p-products{
+  margin-bottom: 7%;
+}
+.p-products img{
+  display: inline-block;
+  width: 20%;
+  height: 20%;
+  margin: 2% 5%;
+}
+.p-products h2{
+  margin: 2%;
+  font-size: 3.4vw;
+  color: #081F35;
+}
+.p-products span, .p-section span{
+  border-width: 5px;
+  border-bottom: #ff820f;
+  border-bottom-style: solid;
+  padding: 0.7%;
+}
+.p-products p, .p-section p{
+  margin: 2.5% 2% 2%;
+}
+.bolsa1{
+  width: 15% !important;
+  height: 15% !important;
+}
+.bolsa2{
+  width: 13% !important;
+  height: 13% !important;
+}
+.pintura2{
+  width: 18% !important;
+  height: 18% !important;
+}
+.pintura3{
+  width: 18% !important;
+  height: 18% !important;
+}
+.laminado1, .laminado2{
+  width: 15% !important;
+}
+.trilaminado1{
+  width: 16% !important;
+  height: 16% !important;
+}
+.agro1{
+  width: 16% !important;
+  height: 14% !important;
+}
+.agro2{
+  width: 14% !important;
+  height: 10% !important;
+}
+.valvula1{
+  width: 10% !important;
+  height: 10% !important;
+}
+.zipper1{
+  width: 15% !important;
+}
+.valvula2{
+  width: 13% !important;
+}
+.doypack1{
+  width: 16% !important;
+}
+.doypack2{
+  width: 14.5% !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/***********************************************************************************************/
+/*******************************************ABOUT US********************************************/
+/***********************************************************************************************/
+
+/*******************************ABOUT BANNER*****************************/
+.a-banner{
+  background-image: linear-gradient(rgba(255, 130, 15,0.8),rgba(255, 130, 15,0.5)), url(./assets/img/banner.jpg);
+  background-size: cover;
+  margin: 70px 0;
+  padding: 50px 0px;
+  color: white;
+  text-align: center;
 }
+
+/**********************************CONTENIDO****************************************/
+.us-title, .mision-title, .vision-title{
+  text-align: center;
+  color: black;
+  margin: 2% 15%;
+  color: #081F35;
+}
+.us-title span, .mision-title span, .vision-title span{
+  border-bottom: solid 5px #ff820f;
+}
+.us-card, .mision-card, .vision-card{
+  text-align: center;
+  margin: 0% 15%;
+}
+
+.us-img, .mision-img, .vision-img{
+  border-radius: 1.5%;
+  width: 75%;
+  transition: transform .2s;
+}
+.us-img:hover, .mision-img:hover, .vision-img:hover{
+  transform: scale(1.05);
+} 
+
+.us-text, .mision-text, .vision-text{
+  padding: 4% 15%;
+  text-align: justify;
+}
+
+/********************************MAQUINARIA*************************************************/
+
+.maquina-row{
+  text-align: center;
+  padding: 3% 5% 8%;
+}
+.maquina-row Col{
+}
+
+.maquina-title span{
+  border-bottom: solid 5px #ff820f;
+}
+.maquina-img{
+  padding: 10px;
+  border-radius: 6.5%;
+  width: 300px;
+  max-height: 210px;
+  object-fit: cover;
+}
+
+/**************************************************************************************/
+/*************************************CONTACT*****************************************/
+/*************************************************************************************/
+.c-banner{
+  background-image: linear-gradient(rgba(255, 130, 15,0.8),rgba(255, 130, 15,0.5)), url(./assets/img/banner.jpg);
+  background-size: cover;
+  margin: 70px 0;
+  padding: 50px 0px;
+  color: white;
+}
+
+/**************************************************************************************/
+/*************************************ACTIVITIES*****************************************/
+/*************************************************************************************/
+
+.ac-banner{
+  background-image: linear-gradient(rgba(255, 130, 15,0.8),rgba(255, 130, 15,0.5)), url(./assets/img/banner.jpg);
+  background-size: cover;
+  margin: 70px 0;
+  padding: 50px 0px;
+  color: white;
+}
+.activities-title span{
+  border-width: 5px;
+  border-bottom: #ff820f;
+  border-bottom-style: solid;
+  padding: 0;
+}
+
+.activities-img{
+  padding: 10px;
+  border-radius: 6.5%;
+  width: 360px;
+  max-height: 250px;
+  object-fit: cover;
+  transition: transform .2s;
+}
+
+.activities-img:hover{
+  transform: scale(1.05);
+}
+
+
+.ac-grid{
+  margin: 0 !important; 
+}
+.ac-grid p{
+  margin: 3% 20% 5%
+}
+
