@@ -17,7 +17,7 @@
     return (
         <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
             <Container>
-            <Navbar.Brand href="/">
+            <Navbar.Brand href="/EFH-Pagina-Web">
                 <img id="logo-img" src={logo} alt="Logo" />
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav">
@@ -25,7 +25,7 @@
             </Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ms-auto">
-                <Link to="/"><Nav.Link href="#inicio" className={activeLink === 'Inicio' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('inicio')}>Inicio</Nav.Link></Link>
+                <Link to="/EFH-Pagina-Web"><Nav.Link href="#inicio" className={activeLink === 'Inicio' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('inicio')}>Inicio</Nav.Link></Link>
                 <Link to="/Productos"><Nav.Link href="#productos" className={activeLink === 'Productos' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('productos')}>Productos</Nav.Link></Link>
                 <Link to="/Nosotros"><Nav.Link href="#maquinas" className={activeLink === 'Maquinas' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('maquinas')}>Sobre Nosotros</Nav.Link></Link>
                 <Link to="/Actividad"><Nav.Link href="#actividad" className={activeLink === 'Actividad' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('actividad')}>Actividad</Nav.Link></Link>

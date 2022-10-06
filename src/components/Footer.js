@@ -17,7 +17,7 @@ export const Footer = () => {
             <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
                 <h6 className='text-uppercase fw-bold mb-4'>Enlaces rápidos</h6>
                 <h6>
-                <Link to="/" onClick="scrollToTop" className='text-reset'>
+                <Link to="/EFH-Pagina-Web" onClick="scrollToTop" className='text-reset'>
                     Inicio
                 </Link>
                 </h6>
