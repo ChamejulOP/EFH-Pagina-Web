@@ -2,6 +2,7 @@
   "name": "efh-page",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://ChamejulOP.github.io/EFH-Pagina-Web",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -12,6 +13,7 @@
     "cdbreact": "^1.5.3",
     "cors": "^2.8.5",
     "express": "^4.18.1",
+    "gh-pages": "^4.0.0",
     "jquery": "^3.6.1",
     "mdb-react-ui-kit": "^4.2.0",
     "nodemailer": "^6.7.8",
@@ -26,6 +28,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
